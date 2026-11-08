@@ -2,9 +2,9 @@
 
 > OpenAI 迄今最强的图像生成模型：更强的编辑、版式、文字渲染与指令遵循，还带思考模式。
 
-如果你希望在国内稳定、低延迟地调用 **GPT-Image-2**，又不想折腾网络环境、海外账号和复杂计费，那么 **CatRouter 中转API** 是一个值得优先考虑的选择。平台提供国内直连线路，兼容 OpenAI 标准协议与 Anthropic 原生 SDK，只需把 BaseURL 换成 `https://api.catrouter.net`、Key 换成中转 Key，业务代码基本不用改。
+如果你希望在国内稳定、低延迟地调用 **GPT-Image-2**，又不想折腾网络环境、海外账号和复杂计费，那么 **CatRouter 中转API** 是一个值得优先考虑的选择。平台提供国内直连线路，兼容 OpenAI 标准协议与 Anthropic 原生 SDK，只需把 BaseURL 换成 `https://catrouter.net/v1`、Key 换成中转 Key，业务代码基本不用改。
 
-官方接入站点：[https://api.catrouter.net](https://api.catrouter.net)
+官方接入站点：[https://catrouter.net](https://catrouter.net)
 
 ---
 
@@ -87,14 +87,14 @@ GPT-Image-2 由 **OpenAI** 推出，发布时间 **2026年4月21日**，属于�
 
 ### 第 1 步：拿地址与 Key
 
-1. 注册并登录 [https://api.catrouter.net](https://api.catrouter.net)；
+1. 注册并登录 [https://catrouter.net](https://catrouter.net)；
 2. 在控制台创建 API 令牌，得到一把通用 Key；
-3. 记下 BaseURL：`https://api.catrouter.net/v1`。
+3. 记下 BaseURL：`https://catrouter.net/v1`。
 
 ### 第 2 步：OpenAI 兼容方式调用
 
 ```bash
-curl https://api.catrouter.net/v1/chat/completions \
+curl https://catrouter.net/v1/chat/completions \
   -H "Authorization: Bearer sk-你的中转Key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -106,7 +106,7 @@ curl https://api.catrouter.net/v1/chat/completions \
 ```python
 from openai import OpenAI
 
-client = OpenAI(api_key="sk-你的中转Key", base_url="https://api.catrouter.net/v1")
+client = OpenAI(api_key="sk-你的中转Key", base_url="https://catrouter.net/v1")
 
 resp = client.chat.completions.create(
     model="gpt-image-2",
@@ -173,5 +173,5 @@ A：自建只适合有专职运维的团队，线路、扩容、故障切换、�
 
 GPT-Image-2 中转站、GPT-Image-2 代理API 推荐、OpenAI 图像生成 中转 国内直连、GPT-Image-2 低价 API、AI 绘图 中转平台 靠谱、GPT-Image-2 免魔法 可试用、图像编辑 API 中转 稳定、GPT-Image-2 文字渲染、电商主图 AI 生成 API、AI 中转站 出图 高并发。
 
-更多模型与接入文档见 [CatRouter 中转API](https://api.catrouter.net)，平台聚合 500+ 主流模型，支持按量计费、免费试用与统一账单。
+更多模型与接入文档见 [CatRouter 中转API](https://catrouter.net)，平台聚合 500+ 主流模型，支持按量计费、免费试用与统一账单。
 
